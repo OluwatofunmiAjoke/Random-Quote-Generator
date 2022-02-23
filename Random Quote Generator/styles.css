@@ -6,3 +6,17 @@ body{
     min-height: 100vh;
     justify-content:center;
 }
+
+.container{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.biggerStyle{
+    font-size:larger;
+    font-weight: bolder;
+    padding-bottom: 1em;
+}
