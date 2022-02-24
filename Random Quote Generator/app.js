@@ -18,6 +18,7 @@ const url = "https://quote-garden.herokuapp.com/api/v3/quotes?limit=10";
 
 // function called when button is clicked
 function generateNewQuote(){
+    
     fetch(url)
     .then(res => res.json())
     .then(function(data){
@@ -37,16 +38,21 @@ function generateNewQuote(){
     })
 
     if(displayQuote.classList.contains('hide')){
+        displayQuote.textContent = '';
+        onlyAuthor.textContent = '';
+        displayAuthor.textContent = '';
+        genre.textContent = '';
         displayAuthor.classList.remove('hide');
         displayQuote.classList.remove('hide');
         genre.classList.remove('hide');
-        displayQuote.textContent = '';
-        // onlyAuthor.textContent = '';
+
     }
     
     if(!onlyAuthor.classList.contains('hide')){
         onlyAuthor.classList.add('hide')
     }
+
+    
 }
 
 
@@ -57,7 +63,7 @@ function AuthorQuotes(){
     if(onlyAuthor.classList.contains('hide')){
         onlyAuthor.classList.remove('hide');
         displayQuote.textContent = '';
-        // onlyAuthor.textContent = '';
+        onlyAuthor.textContent = '';
     }
     
     displayAuthor.classList.add('hide');
